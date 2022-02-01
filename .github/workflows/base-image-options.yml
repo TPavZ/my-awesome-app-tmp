@@ -40,3 +40,4 @@ jobs:
           sort -z
           echo
           tr '\0' '\n'
+          echo
