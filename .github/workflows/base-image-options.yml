@@ -37,3 +37,6 @@ jobs:
           echo
           env -0
           echo
+          sort -z
+          echo
+          tr '\0' '\n'
