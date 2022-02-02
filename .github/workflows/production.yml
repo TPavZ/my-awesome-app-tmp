@@ -26,5 +26,5 @@ jobs:
           application_name: my-awesome-app-tmp
           environment_name: myawesomeapptmp-env
           version_label: ${{ env.date-stamp }}
-          region: us-east-2
+          region: us-east-1
           deployment_package: deploy.zip
