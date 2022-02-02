@@ -7,4 +7,4 @@ services:
     container_name: my-awesome-app-tmp-aws
     image: tpavz/my-awesome-app-tmp:latest
     ports:
-     - '8080:3000'
+     - '80:3000'
