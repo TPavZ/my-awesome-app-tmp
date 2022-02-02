@@ -1,0 +1,10 @@
+#For use on AWS ED env.
+#Set version
+version: '3.9'
+#Define services
+services:
+  prob-web:
+    container_name: my-awesome-app-tmp-aws
+    image: tpavz/my-awesome-app-tmp:latest
+    ports:
+     - '8080:3000'
