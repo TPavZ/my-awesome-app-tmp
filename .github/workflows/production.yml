@@ -23,7 +23,7 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: my-awesome-app-tmp
+          application_name: My-Awsome-App
           environment_name: Myawesomeapptmp-env
           version_label: ${{ env.date-stamp }}
           region: us-east-1
