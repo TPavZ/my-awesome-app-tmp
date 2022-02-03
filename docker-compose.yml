@@ -3,13 +3,13 @@
 version: '3.9'
 #Define services
 services:
-  prob-web:
+  prod-web:
     container_name: my-awesome-app-tmp-aws
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - './:.app'
+      - './:/app'
       - '/app/node_modules'
     ports:
      - '80:8080'
