@@ -4,6 +4,7 @@ on:
     types: [published]
   workflow_dispatch:
 env:
+  AWS_REGION: us-east-1
   DATE_STAMP: $(date +%s)
 jobs:
   # This workflow contains a single job called "build"
@@ -14,8 +15,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Env variables
         run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
-      - name: Checkout source code
-        uses: actions/checkout@v2
+      - name: COnfigure AWS Credentials
+      - uses: aws-actions.configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: us-east-1
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
       - name: Deploy to AWS EBS
