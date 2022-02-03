@@ -5,6 +5,11 @@ version: '3.9'
 services:
   prob-web:
     container_name: my-awesome-app-tmp-aws
-    image: tpavz/my-awesome-app-tmp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:.app'
+      - '/app/node_modules'
     ports:
-     - '80:3000'
+     - '80:8080'
